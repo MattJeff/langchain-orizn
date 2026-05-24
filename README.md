@@ -54,6 +54,12 @@ en, fr, es, pt, de, ja, ko, zh, ru, it, ar, hi, th, vi, tl
 - [MCP Server](https://github.com/MattJeff/orizn-mcp-server)
 - [GitHub](https://github.com/MattJeff/langchain-orizn)
 
+## Feedback
+
+Building a travel agent or visa tool? We'd love to hear what you're building.
+
+→ **api@orizn.app** — Feature requests, partnerships, and questions welcome.
+
 ## License
 
 MIT
