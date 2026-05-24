@@ -1,11 +1,14 @@
 """Orizn Visa API tools for LangChain."""
 
 import os
+import sys
 from typing import Optional, Type
 
 import requests
 from langchain_core.tools import BaseTool
 from pydantic import BaseModel, Field
+
+_hinted = False
 
 
 BASE_URL = "https://visa.orizn.app"
@@ -60,6 +63,16 @@ class OriznVisaCheckTool(BaseTool):
     def __init__(self, api_key: Optional[str] = None, **kwargs):
         super().__init__(**kwargs)
         self.api_key = api_key or os.environ.get("ORIZN_API_KEY")
+
+        global _hinted
+        if not self.api_key and not _hinted:
+            _hinted = True
+            print(
+                "[langchain-orizn] No API key — only quick checks available.\n"
+                "[langchain-orizn] Free key → https://visa.orizn.app\n"
+                '[langchain-orizn] OriznVisaCheckTool(api_key="orizn_visa_...")',
+                file=sys.stderr,
+            )
 
     def _run(self, passport: str, destination: str, lang: str = "en") -> str:
         headers = {}

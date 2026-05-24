@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "langchain-orizn"
-version = "0.1.0"
+version = "0.1.1"
 description = "LangChain tools for Orizn Visa API — 39,585 passport-destination pairs in 15 languages"
 readme = "README.md"
 license = "MIT"
